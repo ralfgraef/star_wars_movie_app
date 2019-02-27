@@ -2,11 +2,15 @@ const express = require("express");
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 // Routes
 
 // home
 app.get("/", (req, res) => {
-  res.send("Server response");
+  res.render("home", {
+    title: "Star Wars Movies"
+  });
 });
 
 // movie_single
